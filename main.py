@@ -191,7 +191,7 @@ class TranslateMenu(App):
 
 if __name__ == "__main__":
 	print "-------------------------------------------------------------------------"
-	print "\t\t\tMENU TRANSLATION PROJECT Version 0.1.2"
+	print "\t\t\tMENU TRANSLATION PROJECT Version 0.1.3"
 	print "-------------------------------------------------------------------------\n\n"
 	print "-------------------------------------------------------------------------"
 	print "NOTE: \n1. While taking the picture make sure the dish to be queried is at the top in the image! \n2. If working on Desktop, save the clicked picture in the data directory and set the corresponding flag and inputfile name\n3. Happy Feasting!"
