@@ -1,0 +1,15 @@
+PALAK PANEER	पालक पनीर
+MUTTER PANEER	मटर पनीर
+BHINDI MASALA	बिंदी मसाला
+MASALA DOSA	मासाला डोसा
+IDLI	इडली 	
+PASTA	पास्ता
+FRENCH FRIES	फ्रेंच फ्राइज
+PANEER TIKKA	पनीर टिक्का
+MAGGI	मैगी
+BABYCORN MASALA	बेबीकॉर्न मसाला	
+VEG NOODLES	शाकाहारी नूडल्स
+TOMATO SOUP	टमाटर सूप
+MOMO	मोमो
+SPRING ROLL	स्प्रिंग रोल
+PANEER BUTTER MASALA	पनीर मक्खन मसाला
