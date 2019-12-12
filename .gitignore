@@ -1,0 +1,4 @@
+data*
+*.sqlite
+.DS_STORE
+*.bak

@@ -28,19 +28,23 @@ def generate_output(textfile,database,translatedImage,hindiTextImage):
 	dish_all = f.read()
 	#dish = dish_all.split('\n')[0]
 	dish=dish_all.split('\n')
-	print dish
+	#print(dish)
 	dish=dish[0]
-	#print database
-	print "-------------------------------------------------------------------------"
-	print "\t\t\tDATABASE LOOKUP"
-	print "-------------------------------------------------------------------------"
+	#print(database)
+	print("-------------------------------------------------------------------------")
+	print("\t\t\tDATABASE LOOKUP")
+	print("-------------------------------------------------------------------------")
 	conn=create_connection(database)
 	cur=conn.cursor()
 	
 	cur.execute("SELECT dish_name from menudb")
 	dish_namelist=cur.fetchall()#this is a lsit of all dishnames in the database
-	ratio_list=[similar((dish).upper(),(x[0].encode("ascii")).upper()) for x in dish_namelist]
-	print "ratiolist" ,ratio_list
+	print(dish_namelist)
+	#ratio_list=[similar((dish).upper(),(x[0].encode("ascii")).upper()) for x in dish_namelist]
+	ratio_list=[]
+	for x in dish_namelist:
+		ratio_list.append(similar(dish.upper(), x[0].upper()))
+	#print("ratiolist" ,ratio_list)
 	#fidning index of maximum element in ratio list
 	max_index=0
 	max_score=ratio_list[0]
@@ -48,9 +52,9 @@ def generate_output(textfile,database,translatedImage,hindiTextImage):
 		if(max_score<ratio_list[i]):
 			max_score=ratio_list[i]
 			max_index=i
-	cur.execute("SELECT * from menudb WHERE dish_name=?",(dish_namelist[max_index][0].encode("ascii"),))
+	cur.execute("SELECT * from menudb WHERE dish_name=?",(dish_namelist[max_index][0],))
 	all_cols=cur.fetchall()
-	#print all_cols
+	#print(all_cols)
 	ablob= all_cols[0][3]
 
 	#return all_cols[0][2] # this returns hindi translation of it in unicode
@@ -62,9 +66,9 @@ def generate_output(textfile,database,translatedImage,hindiTextImage):
 	tcolor = (255,255,255,1)
 	text_pos = (10,40)
 	font5 = ImageFont.truetype('src/sqlite/arialuni.ttf', 24)
-	print "-------------------------------------------------------------------------"
-	print "\t\t\t",all_cols[0][1],"\t",text
-	print "-------------------------------------------------------------------------"
+	print("-------------------------------------------------------------------------")
+	print("\t\t\t",all_cols[0][1],"\t",text)
+	print("-------------------------------------------------------------------------")
 	img = Image.new('RGB',(800,800),(0,0,0,0))
 	draw = ImageDraw.Draw(img)
 	draw.text(text_pos, text, font=font5, fill=tcolor)

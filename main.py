@@ -32,9 +32,9 @@ inputimage = None
 
 
 def ocr(filename):
-	print "-------------------------------------------------------------------------"
-	print "\t\t\tRUNNNING OCR"
-	print "-------------------------------------------------------------------------"
+	print("-------------------------------------------------------------------------")
+	print("\t\t\tRUNNNING OCR")
+	print("-------------------------------------------------------------------------")
 	os.system('python src/extract_text.py {} data/output/pre_output.jpg'.format(inputimage))
 	txtfile = 'data/text/{}.txt'.format(inputimage.split('/')[-1].split('.')[0])
 	database=	"src/sqlite/projectdb.sqlite"
@@ -190,27 +190,27 @@ class TranslateMenu(App):
 		return root_widget
 
 if __name__ == "__main__":
-	print "-------------------------------------------------------------------------"
-	print "\t\t\tMENU TRANSLATION PROJECT Version 0.1.3"
-	print "-------------------------------------------------------------------------\n\n"
-	print "-------------------------------------------------------------------------"
-	print "NOTE: \n1. While taking the picture make sure the dish to be queried is at the top in the image! \n2. If working on Desktop, save the clicked picture in the data directory and set the corresponding flag and inputfile name\n3. Happy Feasting!"
-	print "-------------------------------------------------------------------------\n\n"
-	print "-------------------------------------------------------------------------"
-	print "1. Running on android device \t\t 2. Running on Desktop\n"
+	print("-------------------------------------------------------------------------")
+	print("\t\t\tMENU TRANSLATION PROJECT Version 0.1.3")
+	print("-------------------------------------------------------------------------\n\n")
+	print("-------------------------------------------------------------------------")
+	print("NOTE: \n1. While taking the picture make sure the dish to be queried is at the top in the image! \n2. If working on Desktop, save the clicked picture in the data directory and set the corresponding flag and inputfile name\n3. Happy Feasting!")
+	print("-------------------------------------------------------------------------\n\n")
+	print("-------------------------------------------------------------------------")
+	print("1. Running on android device \t\t 2. Running on Desktop\n")
 	while(1):
-		choice = raw_input("Enter input:\t")
+		choice = input("Enter input:\t")
 		if(choice == str(1)):
-			print "This version doesn't provide android support. Stay tuned for the later releases!\n"
+			print("This version doesn't provide android support. Stay tuned for the later releases!\n")
 		else:
 			input_data_dir = 'data/input'
-			print "\n\nFiles available:"
+			print("\n\nFiles available:")
 			files = [f for f in listdir(input_data_dir) if isfile(join(input_data_dir,f)) and (f.endswith(".jpg") or f.endswith(".png"))]
-			print files
-			inputimage = join(input_data_dir,raw_input("Enter input image filename:\t"))
+			print(files)
+			inputimage = join(input_data_dir,input("Enter input image filename:\t"))
 			break
-	print "-------------------------------------------------------------------------\n\n"
-	print "-------------------------------------------------------------------------"
-	print "\t\t\tPress Capture Button"
-	print "-------------------------------------------------------------------------\n\n"
+	print("-------------------------------------------------------------------------\n\n")
+	print("-------------------------------------------------------------------------")
+	print("\t\t\tPress Capture Button")
+	print("-------------------------------------------------------------------------\n\n")
 	TranslateMenu().run()
