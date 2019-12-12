@@ -2,3 +2,5 @@ data*
 *.sqlite
 .DS_STORE
 *.bak
+src/__pycache__/
+src/sqlite/__pycache__/
