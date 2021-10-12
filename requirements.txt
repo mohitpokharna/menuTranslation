@@ -8,7 +8,7 @@ Kivy-Garden==0.1.4
 kiwisolver==1.1.0
 matplotlib==3.1.2
 numpy==1.17.4
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 Pillow==6.2.1
 Pygments==2.5.2
 pyparsing==2.4.5
